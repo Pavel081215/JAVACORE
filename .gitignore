@@ -4,5 +4,5 @@ out/*
 *.class
 *.name
 
-/target/
-/.idea/
+
+

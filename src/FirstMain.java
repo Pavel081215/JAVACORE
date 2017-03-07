@@ -1,9 +1,9 @@
 
 
 
-public class Main {
+public class FirstMain {
 
-    public static void main(String[] args) {
+    public static void Firstmain(String[] args) {
         // System.out.println("Hello World!");
 ////        /**
 //         * Это первый пример программы в главе 3 данного тома
