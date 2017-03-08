@@ -78,7 +78,7 @@ class OrdArray {
 
 ////////////////////////////////////////////////////////////////
 class OrderedApp {
-    public static void main(String[] args) {
+    public static void OrderedAppMain(String[] args) {
         int maxSize = 100;             // Размер массива
         OrdArray arr;                  // Ссылка на массив
         arr = new OrdArray(maxSize);   // Создание массива

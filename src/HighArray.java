@@ -56,36 +56,55 @@ class HighArray {
             System.out.print(a[j] + " ");  // Вывод
         System.out.println("");
     }
+
+    //-----------------------------------------------------------
+    public void getMax() {
+
+        if (nElems == 0) {
+            System.out.println("Max = is not " + -1);
+        } else {
+            long max = a[0];
+            for (int i = 0; i < nElems; i++) {
+                if (a[i] > max) {
+                    max = a[i];
+                }
+            }
+            System.out.println("Max =" + max);
+        }
+    }
+
     //-----------------------------------------------------------
 }  // Конец класса HighArray
 
 ////////////////////////////////////////////////////////////////
 class HighArrayApp {
-    public static void HighArrayAppMain(String[] args) {
+    public static void main(String[] args) {
         int maxSize = 100;            // Размер массива
 
         HighArray arr;                // Ссылка на массив
         arr = new HighArray(maxSize); // Создание массива
-        arr.insert(77);               // Вставка 10 элементов
-        arr.insert(99);
-        arr.insert(44);
-        arr.insert(55);
-        arr.insert(22);
-        arr.insert(88);
-        arr.insert(11);
-        arr.insert(00);
-        arr.insert(66);
-        arr.insert(33);
+//        arr.insert(77);               // Вставка 10 элементов
+//        arr.insert(99);
+//        arr.insert(44);
+//        arr.insert(55);
+//        arr.insert(22);
+//        arr.insert(88);
+//        arr.insert(11);
+//        arr.insert(00);
+//        arr.insert(66);
+//        arr.insert(111133);
         arr.display();                // Вывод элементов
-        int searchKey = 35;           // Поиск элемента
-        if (arr.find(searchKey))
-            System.out.println("Found " + searchKey);
-        else
-            System.out.println("Can't find " + searchKey);
-        arr.delete(00);               // Удаление трех элементов
-        arr.delete(55);
-        arr.delete(99);
-        arr.display();                // Повторный вывод
+//        int searchKey = 99;           // Поиск элемента
+//        if (arr.find(searchKey))
+//            System.out.println("Found " + searchKey);
+//        else
+//            System.out.println("Can't find " + searchKey);
+//        arr.delete(00);               // Удаление трех элементов
+//        arr.delete(55);
+//        arr.delete(99);
+//        arr.display();                // Повторный вывод
+
+        arr.getMax();
     }
 }  // Конец класса HighArrayApp
 ////////////////////////////////////////////////////////////////
