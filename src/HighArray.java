@@ -75,12 +75,13 @@ class HighArray {
 
     //-----------------------------------------------------------
 
-    public void removeMax() {
+    public long removeMax() {
+        long max = a[0];
         if (nElems == 0) {
             System.out.println("Max = is not " + -1);
         } else {
             int maxIndex = 0;
-            long max = a[0];
+
             for (int i = 0; i < nElems; i++) {
                 if (a[i] > max) {
                     max = a[i];
@@ -93,6 +94,9 @@ class HighArray {
             }
             nElems = nElems - 1;
         }
+
+
+        return max;
     }
     //-----------------------------------------------------------
 }  // Конец класса HighArray
@@ -127,8 +131,9 @@ class HighArrayApp {
 
         //       arr.getMax();
 
-        arr.removeMax();
+        long maxMaim = arr.removeMax();
         arr.display();
+        System.out.println("maxMaim = " + maxMaim);
     }
 }  // Конец класса HighArrayApp
 ////////////////////////////////////////////////////////////////
