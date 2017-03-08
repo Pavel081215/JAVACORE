@@ -73,16 +73,50 @@ class OrdArray {
             System.out.print(a[j] + " ");  // Вывод текущего элемента
         System.out.println("");
     }
+
+    //-----------------------------------------------------------
+    public long get(int index) {
+        return a[index];
+    }
+
+    //-----------------------------------------------------------
+    public OrdArray mergeTemp(OrdArray a, OrdArray b) {
+        OrdArray new1 = new OrdArray(a.size());
+        for (int i = 0; i < a.size(); i++) {
+            if (i > b.size() - 1) {
+                new1.insert(a.get(i));
+            } else {
+                if (a.get(i) >= b.get(i)) {
+                    new1.insert(a.get(i));
+                } else {
+                    new1.insert(b.get(i));
+                }
+            }
+        }
+
+        return new1;
+    }
+    //-----------------------------------------------------------
+    public OrdArray merge(OrdArray b) {
+
+        if (b.size() < size()) {
+            return mergeTemp(this, b);
+        } else {
+            return mergeTemp(b, this);
+        }
+
+    }
+
     //-----------------------------------------------------------
 }
-
 ////////////////////////////////////////////////////////////////
 class OrderedApp {
-    public static void OrderedAppMain(String[] args) {
-        int maxSize = 100;             // Размер массива
-        OrdArray arr;                  // Ссылка на массив
-        arr = new OrdArray(maxSize);   // Создание массива
-        arr.insert(77);                // Вставка 10 элементов
+    public static void main(String[] args) {
+        int maxSize = 10;
+        int maxSize1 = 25;
+        OrdArray arr = new OrdArray(maxSize);
+        OrdArray arr1 = new OrdArray(maxSize1);
+        arr.insert(77);
         arr.insert(99);
         arr.insert(44);
         arr.insert(55);
@@ -92,16 +126,34 @@ class OrderedApp {
         arr.insert(00);
         arr.insert(66);
         arr.insert(33);
-        int searchKey = 55;            // Поиск элемента
-        if (arr.find(searchKey) != arr.size())
-            System.out.println("Found " + searchKey);
-        else
-            System.out.println("Can't find " + searchKey);
-        arr.display();                 // Вывод содержимого
-        arr.delete(00);                // Удаление трех элементов
-        arr.delete(55);
-        arr.delete(99);
-        arr.display();                 // Повторный вывод
+
+
+        arr1.insert(5);
+        arr1.insert(6);
+        arr1.insert(7);
+        arr1.insert(8);
+        arr1.insert(29);
+        arr1.insert(75);
+        arr1.insert(333);
+        arr1.insert(2);
+        arr1.insert(43);
+        arr1.insert(84);
+        arr1.insert(37);
+        arr1.insert(75);
+        arr1.insert(438);
+        arr1.insert(4);
+        arr1.insert(4);
+        arr1.insert(3);
+        arr1.insert(0);
+        arr1.insert(4);
+        arr1.insert(64);
+        arr1.insert(6);
+
+        arr.display();
+        arr1.display();
+
+        arr.merge(arr1).display();
+
     }
 }
 ////////////////////////////////////////////////////////////////

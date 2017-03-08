@@ -109,7 +109,7 @@ class HighArray {
 
 ////////////////////////////////////////////////////////////////
 class HighArrayApp {
-    public static void main(String[] args) {
+    public static void HighArrayAppMain(String[] args) {
         int maxSize = 100;            // Размер массива
 
         HighArray arr;                // Ссылка на массив
