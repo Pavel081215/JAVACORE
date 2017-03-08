@@ -74,6 +74,27 @@ class HighArray {
     }
 
     //-----------------------------------------------------------
+
+    public void removeMax() {
+        if (nElems == 0) {
+            System.out.println("Max = is not " + -1);
+        } else {
+            int maxIndex = 0;
+            long max = a[0];
+            for (int i = 0; i < nElems; i++) {
+                if (a[i] > max) {
+                    max = a[i];
+                    maxIndex = i;
+                }
+            }
+            System.out.println("Max = index" + maxIndex);
+            for (int j = maxIndex; j < nElems; j++) {
+                a[j] = a[j + 1];
+            }
+            nElems = nElems - 1;
+        }
+    }
+    //-----------------------------------------------------------
 }  // Конец класса HighArray
 
 ////////////////////////////////////////////////////////////////
@@ -83,16 +104,16 @@ class HighArrayApp {
 
         HighArray arr;                // Ссылка на массив
         arr = new HighArray(maxSize); // Создание массива
-//        arr.insert(77);               // Вставка 10 элементов
-//        arr.insert(99);
-//        arr.insert(44);
-//        arr.insert(55);
-//        arr.insert(22);
-//        arr.insert(88);
-//        arr.insert(11);
-//        arr.insert(00);
-//        arr.insert(66);
-//        arr.insert(111133);
+        arr.insert(709997);               // Вставка 10 элементов
+        arr.insert(99);
+        arr.insert(44);
+        arr.insert(8);
+        arr.insert(22);
+        arr.insert(88);
+        arr.insert(11);
+        arr.insert(00);
+        arr.insert(66);
+        arr.insert(11);
         arr.display();                // Вывод элементов
 //        int searchKey = 99;           // Поиск элемента
 //        if (arr.find(searchKey))
@@ -104,7 +125,10 @@ class HighArrayApp {
 //        arr.delete(99);
 //        arr.display();                // Повторный вывод
 
-        arr.getMax();
+        //       arr.getMax();
+
+        arr.removeMax();
+        arr.display();
     }
 }  // Конец класса HighArrayApp
 ////////////////////////////////////////////////////////////////
