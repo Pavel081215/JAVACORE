@@ -111,7 +111,7 @@ class OrdArray {
 }
 ////////////////////////////////////////////////////////////////
 class OrderedApp {
-    public static void main(String[] args) {
+    public static void OrderedAppMain(String[] args) {
         int maxSize = 10;
         int maxSize1 = 25;
         OrdArray arr = new OrdArray(maxSize);

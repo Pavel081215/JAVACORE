@@ -1,59 +1,59 @@
 // highArray.java
-// Класс массива с высокоуровневым интерфейсом
-// Запуск программы: C>java HighArrayApp
+// РљР»Р°СЃСЃ РјР°СЃСЃРёРІР° СЃ РІС‹СЃРѕРєРѕСѓСЂРѕРІРЅРµРІС‹Рј РёРЅС‚РµСЂС„РµР№СЃРѕРј
+// Р—Р°РїСѓСЃРє РїСЂРѕРіСЂР°РјРјС‹: C>java HighArrayApp
 ////////////////////////////////////////////////////////////////
 class HighArray {
-    private long[] a;                 // Ссылка на массив a
-    private int nElems;               // Количество элементов в массиве
+    private long[] a;                 // РЎСЃС‹Р»РєР° РЅР° РјР°СЃСЃРёРІ a
+    private int nElems;               // РљРѕР»РёС‡РµСЃС‚РІРѕ СЌР»РµРјРµРЅС‚РѕРІ РІ РјР°СЃСЃРёРІРµ
 
     //-----------------------------------------------------------
-    public HighArray(int max)         // Конструктор
+    public HighArray(int max)         // РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
     {
-        a = new long[max];             // Создание массива
-        nElems = 0;                    // Пока нет ни одного элемента
+        a = new long[max];             // РЎРѕР·РґР°РЅРёРµ РјР°СЃСЃРёРІР°
+        nElems = 0;                    // РџРѕРєР° РЅРµС‚ РЅРё РѕРґРЅРѕРіРѕ СЌР»РµРјРµРЅС‚Р°
     }
 
     //-----------------------------------------------------------
-    public boolean find(long searchKey) {                              // Поиск заданного значения
+    public boolean find(long searchKey) {                              // РџРѕРёСЃРє Р·Р°РґР°РЅРЅРѕРіРѕ Р·РЅР°С‡РµРЅРёСЏ
         int j;
-        for (j = 0; j < nElems; j++)        // Для каждого элемента
-            if (a[j] == searchKey)       // Значение найдено?
-                break;                   // Да - выход из цикла
-        if (j == nElems)                // Достигнут последний элемент?
-            return false;               // Да
+        for (j = 0; j < nElems; j++)        // Р”Р»СЏ РєР°Р¶РґРѕРіРѕ СЌР»РµРјРµРЅС‚Р°
+            if (a[j] == searchKey)       // Р—РЅР°С‡РµРЅРёРµ РЅР°Р№РґРµРЅРѕ?
+                break;                   // Р”Р° - РІС‹С…РѕРґ РёР· С†РёРєР»Р°
+        if (j == nElems)                // Р”РѕСЃС‚РёРіРЅСѓС‚ РїРѕСЃР»РµРґРЅРёР№ СЌР»РµРјРµРЅС‚?
+            return false;               // Р”Р°
         else
-            return true;                // Нет
+            return true;                // РќРµС‚
     }
 
     //-----------------------------------------------------------
-    public void insert(long value)    // Вставка элемента в массив
+    public void insert(long value)    // Р’СЃС‚Р°РІРєР° СЌР»РµРјРµРЅС‚Р° РІ РјР°СЃСЃРёРІ
     {
-        a[nElems] = value;             // Собственно вставка
-        nElems++;                      // Увеличение размера
+        a[nElems] = value;             // РЎРѕР±СЃС‚РІРµРЅРЅРѕ РІСЃС‚Р°РІРєР°
+        nElems++;                      // РЈРІРµР»РёС‡РµРЅРёРµ СЂР°Р·РјРµСЂР°
     }
 
     //-----------------------------------------------------------
     public boolean delete(long value) {
         int j;
-        for (j = 0; j < nElems; j++)        // Поиск заданного значения
+        for (j = 0; j < nElems; j++)        // РџРѕРёСЃРє Р·Р°РґР°РЅРЅРѕРіРѕ Р·РЅР°С‡РµРЅРёСЏ
             if (value == a[j])
                 break;
-        if (j == nElems)                  // Найти не удалось
+        if (j == nElems)                  // РќР°Р№С‚Рё РЅРµ СѓРґР°Р»РѕСЃСЊ
             return false;
-        else                           // Значение найдено
+        else                           // Р—РЅР°С‡РµРЅРёРµ РЅР°Р№РґРµРЅРѕ
         {
-            for (int k = j; k < nElems; k++) // Сдвиг последующих элементов
+            for (int k = j; k < nElems; k++) // РЎРґРІРёРі РїРѕСЃР»РµРґСѓСЋС‰РёС… СЌР»РµРјРµРЅС‚РѕРІ
                 a[k] = a[k + 1];
-            nElems--;                   // Уменьшение размера
+            nElems--;                   // РЈРјРµРЅСЊС€РµРЅРёРµ СЂР°Р·РјРµСЂР°
             return true;
         }
     }
 
     //-----------------------------------------------------------
-    public void display()             // Вывод содержимого массива
+    public void display()             // Р’С‹РІРѕРґ СЃРѕРґРµСЂР¶РёРјРѕРіРѕ РјР°СЃСЃРёРІР°
     {
-        for (int j = 0; j < nElems; j++)    // Для каждого элемента
-            System.out.print(a[j] + " ");  // Вывод
+        for (int j = 0; j < nElems; j++)    // Р”Р»СЏ РєР°Р¶РґРѕРіРѕ СЌР»РµРјРµРЅС‚Р°
+            System.out.print(a[j] + " ");  // Р’С‹РІРѕРґ
         System.out.println("");
     }
 
@@ -94,9 +94,16 @@ class HighArray {
             }
             nElems = nElems - 1;
         }
-
-
         return max;
+    }
+
+    //-----------------------------------------------------------
+    public void deleteIndex(int value) {
+        for (int k = value; k < nElems; k++) { // РЎРґРІРёРі РїРѕСЃР»РµРґСѓСЋС‰РёС… СЌР»РµРјРµРЅС‚РѕРІ
+            a[k] = a[k + 1];
+        }
+        System.out.println("РЈРґР°Р»РµРЅ 1 РѕР±СЉРµРєС‚" + value);
+        nElems--;                   // РЈРјРµРЅСЊС€РµРЅРёРµ СЂР°Р·РјРµСЂР°
     }
 
     //-----------------------------------------------------------
@@ -105,35 +112,44 @@ class HighArray {
     }
 
     //-----------------------------------------------------------
-}  // Конец класса HighArray
+    public void noDups() {
+        for (int i = 0; i < nElems; i++) {
+            for (int j =i+1; j < nElems; j++) {
+                if (a[i] == a[j]) {
+                    deleteIndex(j);
+
+                }
+            }
+        }
+
+    }
+    //-----------------------------------------------------------
+
+}  // РљРѕРЅРµС† РєР»Р°СЃСЃР° HighArray
 
 ////////////////////////////////////////////////////////////////
 class HighArrayApp {
-    public static void HighArrayAppMain(String[] args) {
-        int maxSize = 100;            // Размер массива
+    public static void main(String[] args) {
+        int maxSize = 100;            // Р Р°Р·РјРµСЂ РјР°СЃСЃРёРІР°
 
-        HighArray arr;                // Ссылка на массив
-        arr = new HighArray(maxSize); // Создание массива
-        arr.insert(7);               // Вставка 10 элементов
+        HighArray arr;                // РЎСЃС‹Р»РєР° РЅР° РјР°СЃСЃРёРІ
+        arr = new HighArray(maxSize); // РЎРѕР·РґР°РЅРёРµ РјР°СЃСЃРёРІР°
+        arr.insert(22);               // Р’СЃС‚Р°РІРєР° 10 СЌР»РµРјРµРЅС‚РѕРІ
         arr.insert(99);
         arr.insert(44);
         arr.insert(898);
         arr.insert(22);
         arr.insert(88);
-        arr.insert(11);
+        arr.insert(22);
         arr.insert(00);
         arr.insert(66);
-        arr.insert(11);
+        arr.insert(22);
         arr.display();
 
-        HighArray arr2 = new HighArray(maxSize);
-        int sizeArr = arr.size();
 
-        for (int i = 0; i < sizeArr; i++) {
-            arr2.insert(arr.removeMax());
-        }
+        arr.noDups();
+        arr.display();
 
-        arr2.display();
     }
-}  // Конец класса HighArrayApp
+}  // РљРѕРЅРµС† РєР»Р°СЃСЃР° HighArrayApp
 ////////////////////////////////////////////////////////////////
