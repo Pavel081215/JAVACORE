@@ -48,7 +48,7 @@ class ArrayIns {
 
 ////////////////////////////////////////////////////////////////
 class InsertSortApp {
-    public static void main(String[] args) {
+    public static void InsertSortAppmain(String[] args) {
         int maxSize = 100;            // Размер массива
         ArrayIns arr;                 // Ссылка на массив
         arr = new ArrayIns(maxSize);  // Создание массива
