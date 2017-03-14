@@ -3,7 +3,7 @@
 
 public class FirstMain {
 
-    public static void Firstmain(String[] args) {
+    public static void FirstMainmain(String[] args) {
         // System.out.println("Hello World!");
 ////        /**
 //         * Это первый пример программы в главе 3 данного тома
